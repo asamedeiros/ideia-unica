@@ -1,4 +1,4 @@
-export async function getStaticPaths() {
+export async function getStaticPaths() { //mantem copia estatica na cdn
     return {
         paths: [{
             params: {
@@ -20,12 +20,13 @@ export async function getStaticProps(context) {
     return {
         props: {
             id: id
-        }
+        },
+        revalidate: 5
     }
 }
 
 function Produtos(props) {
-    return <div>Id do produto: {props.id}</div>
+    return <div>Página do Produto {props.id}</div>
 }
 
 export default Produtos;

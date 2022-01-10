@@ -7,6 +7,7 @@ async function tempo(request, response) {
     const subscribersResponseJson = await subscribersResponse.json();
     const inscritos = subscribersResponseJson.total_subscribers;
 
+    //faz com que o response seja cacheado. a vercel tentará atualizar o cache após 10 segundos
     response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
 
     response.json({
