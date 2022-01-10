@@ -14,7 +14,7 @@ export async function getStaticPaths() { //mantem copia estatica na cdn
 }
 
 export async function getStaticProps(context) {
-    await delay(5000);
+    await delay(10000);
     const id = context.params.id;
 
     return {
